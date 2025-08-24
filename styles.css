@@ -1,0 +1,85 @@
+:root {
+  --button-height: 3em;
+  --button-width: 5em;
+  --output-width: 20em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body{
+    background: black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header>div {
+    font-size: 3rem;
+    height: auto;
+    margin: 0.5em 0.5em;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 0px 12px darkgray;
+}
+
+div.output {
+  display: block;
+  width: var(--output-width);
+  height: 3em;
+  font-size: 2rem;
+  border: 2px solid grey;
+  margin: 0.5em 0.5em;
+  background-color: rgb(221, 218, 218);
+}
+
+div {
+  height: 6em;
+  gap: 12px;
+  margin: 0.5em 0.5em;
+  & button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--button-width);
+    height: var(--button-height);
+    font-size: 2rem;
+    border: 0px solid darkgray;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 2px darkgray;
+
+    &:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 4px 2px darkgray inset;
+    }
+  }
+
+  &.calculator div {
+    display: flex;
+    min-width: none;
+    flex: 1 1 0;
+  }
+}
+
+/* button:active {
+  transform: translateY(5px);
+} */
+
+#plus {
+  height: calc((var(--button-height) * 2) + (0.5em - 10px));
+  overflow: visible;
+}
+
+#equal {
+  height: calc((var(--button-height) * 3) + 0.5em);
+  box-sizing: content-box;
+  overflow: visible;
+}
